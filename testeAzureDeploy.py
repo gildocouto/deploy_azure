@@ -32,6 +32,12 @@ vocabulario = pickle.load(open(vocabulario_modelo.txt,'rb'))
 
 #Criando objeto vetorizador "vetorizador_tfidf"
 vetorizador_tfidf = TfidfVectorizer(ngram_range=(1, 7),use_idf=True,vocabulary=vocabulario)
+
+#Inicia/renderiza página html com formulário
+@app.route('/')
+def home():
+    #return 'Hello World'
+    return render_template('home.html')
     
 # end-point do flask
 # Essa rota (route) vai redirecionar para a função abaixo. Toda que vez que acessar esse end-point essa função (predict) vai rodar
